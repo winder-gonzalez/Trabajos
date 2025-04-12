@@ -1,36 +1,33 @@
-import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-      System.out.println("*  *  *  * Ejercicio Dados *  *  *  *");
-      //lanzadas
-      int min = 2 ;
-      int max = 100 ;
+        Scanner teclado = new Scanner (System.in);
 
-        Random aleatorio = new Random();
+        double peso ,estatura,indice;
 
-        int lanzada = aleatorio.nextInt((max - min +1))+min;
-        System.out.println("Se realizaron " + lanzada +" lanzadas de dados");
-        //tiradas de dados
-        System.out.println("D1 || D2");
-        int minD= 1;
-        int maxD=6;
+        System.out.println("*  *  *  *  Indice de Masa Corporal *  *  *  *  ");
+        System.out.println("ingrese su peso :");
+        peso=teclado.nextDouble();
 
-        int sumad1=0;
-        int sumad2=0;
+        System.out.println("ingrese su estatura :");
+        estatura=teclado.nextDouble();
 
-        for(int i=0;i<=lanzada;i++){
-            int tirada1 = aleatorio.nextInt((maxD - minD +1))+minD;
-            int tirada2 = aleatorio.nextInt((maxD - minD +1))+minD;
+        indice=peso/(estatura*estatura);
 
-            sumad1+=tirada1;
-            sumad2+=tirada2;
-            System.out.println(tirada1 +"  || "+tirada2);
+        if (indice<=18.49){
+            System.out.println("su indice es "+indice+" por lo tanto estas en peso bajo ");
+        }if (indice>=18.50 && indice<=24.99){
+            System.out.println("su indice es "+indice+" por lo tanto estas en peso normal");
+        }if (indice>=25 && indice<=29.99){
+            System.out.println("su indice es "+indice+" por lo tanto estas en sobrepeso ");
+        }if (indice>=30 && indice<=34.99){
+            System.out.println("su indice es "+indice+" por lo tanto estas en obesidad leve  ");
+        }if (indice>=35 && indice<=39.99){
+            System.out.println("su indice es "+indice+" por lo tanto estas en obesidad media ");
+        }if (indice>=40){
+            System.out.println("su indice es "+indice+" por lo tanto estas en obesidad morbidad ");
         }
-        System.out.println("--------------");
-        System.out.println("   Suma");
-        System.out.println(sumad1+" || "+sumad2);
 
     }
 }
