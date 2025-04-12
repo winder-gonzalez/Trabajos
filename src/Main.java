@@ -3,64 +3,34 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner teclado = new Scanner(System.in);
-        Random random = new Random();
-        System.out.println("      &  &  & CALCULADORA &  &  & ");
-        System.out.println("¿Cuántas operaciones deseas realizar? ");
-        int numOperaciones = teclado.nextInt();
-        int max = 100;
-        int min = 1;
+      System.out.println("*  *  *  * Ejercicio Dados *  *  *  *");
+      //lanzadas
+      int min = 2 ;
+      int max = 100 ;
 
-        for(int i = 0; i < numOperaciones; ++i) {
-            int num1 = random.nextInt(max - min + 1) + min;
-            int num2 = random.nextInt(max - min + 1) + min;
-            System.out.println("");
-            System.out.println("*  *  *  *  *  *  *  *  * OPERACION "+ (i+1) +" *  *  *  *  *  *  *  *  *");
-            System.out.println("");
-            System.out.println("Introduce el signo aritmético (+, -, *, /, ^, %): ");
-            String signo = teclado.next();
-            double resultado = 0;
-            System.out.println("#  #  #  #  #  # RESULTADOS #  #  #  #  #  # ");
-            switch (signo) {
-                case "+":
+        Random aleatorio = new Random();
 
-                    resultado = (double)(num1 + num2);
-                    System.out.println("el numero 1 es : " + num1);
-                    System.out.println("el numero 2 es : " + num2);
-                    break;
-                case "-":
-                    resultado = (double)(num1 - num2);
-                    System.out.println("el numero 1 es : " + num1);
-                    System.out.println("el numero 2 es : " + num2);
-                    break;
-                case "*":
-                    resultado = (double)(num1 * num2);
-                    System.out.println("el numero 1 es : " + num1);
-                    System.out.println("el numero 2 es : " + num2);
-                    break;
-                case "/":
-                    resultado = (double)num1 / (double)num2;
-                    System.out.println("el numero 1 es : " + num1);
-                    System.out.println("el numero 2 es : " + num2);
-                    break;
-                case "^":
-                    resultado = Math.pow((double)num1, (double)num2);
-                    System.out.println("el numero 1 es : " + num1);
-                    System.out.println("el numero 2 es : " + num2);
-                    break;
-                case "%":
-                    resultado = (double)(num1 % num2);
-                    System.out.println("el numero 1 es : " + num1);
-                    System.out.println("el numero 2 es : " + num2);
-                    break;
-                default:
-                    System.out.println("Signo aritmético no válido.");
-                    continue;
-            }
+        int lanzada = aleatorio.nextInt((max - min +1))+min;
+        System.out.println("Se realizaron " + lanzada +" lanzadas de dados");
+        //tiradas de dados
+        System.out.println("D1 || D2");
+        int minD= 1;
+        int maxD=6;
 
-            System.out.println("Resultado: " + resultado);
+        int sumad1=0;
+        int sumad2=0;
 
+        for(int i=0;i<=lanzada;i++){
+            int tirada1 = aleatorio.nextInt((maxD - minD +1))+minD;
+            int tirada2 = aleatorio.nextInt((maxD - minD +1))+minD;
+
+            sumad1+=tirada1;
+            sumad2+=tirada2;
+            System.out.println(tirada1 +"  || "+tirada2);
         }
+        System.out.println("--------------");
+        System.out.println("   Suma");
+        System.out.println(sumad1+" || "+sumad2);
 
     }
 }
