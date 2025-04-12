@@ -1,107 +1,228 @@
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    static List<Empleado> empleados = new ArrayList<Empleado>();
-    static boolean estado=true;
     public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
 
+        System.out.println("\n # # # CONVERSOR DE GRADOS # # #");
+        boolean estado=true;
+        double num;
+        double  resultado;
         do{
-            menu();
+            int opc;
+            System.out.println("1) Celsius a Farenheit " );
+            System.out.println("2) Celsius a Kelvin " );
+            System.out.println("3) Celsius a Rankine " );
+            System.out.println("4) Celsius a Reamur " );
+
+            System.out.println("5) Farenheit a Celsius " );
+            System.out.println("6) Farenheit a Kelvin " );
+            System.out.println("7) Farenheit a Rankine " );
+            System.out.println("8) Farenheit a Reamur " );
+
+            System.out.println("9)  kelvin a Celsius " );
+            System.out.println("10) kelvin a Farenheit  " );
+            System.out.println("11) kelvin a Rankine " );
+            System.out.println("12) kelvin a Reamur " );
+
+            System.out.println("13) Rankine a Celsius " );
+            System.out.println("14) Rankine a Farenheit  " );
+            System.out.println("15) Rankine a Kelvin  " );
+            System.out.println("16) Rankine a Reamur " );
+
+            System.out.println("17) Salir ");
+
+            System.out.println("ingrese un numero de 1 a 17 :");
+            opc =teclado.nextInt();
+
+            switch (opc){
+                case 1 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Celsius a Farenheit  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num*9/5)+32;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+
+
+
+                case 2 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Celsius a Kelvin  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=num+273.15;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 3 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Celsius a Rankine  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num+273.15)*9/5;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 4 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Celsius a Reamur  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=num*4/5;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 5 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Farenheit a Celsius  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num-32)*5/9;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+
+                case 6 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Farenheit a Kelvin  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num-32)*5/9+32;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 7 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Farenheit a Rankine  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=num+459.67;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 8 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Farenheit a Reaumur  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num-32)*5/9+32;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 9 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  kelvin a Celsius  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=num-273.15;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 10 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  kelvin a Farenheit  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num-273.15)*9/5+32;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 11 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  kelvin a Rankine  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=num*9/5;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 12 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  kelvin a Reaumur  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num-273.15)*4/5;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 13 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Rankine a Celsius  &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num-491.67)*5/9;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 14 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Rankine a Farenheit   &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=num-459.67;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 15 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Rankine a Kelvin   &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=num*5/9;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+                case 16 :
+                    System.out.println("\n -----------------------------------------");
+                    System.out.println("&  &  Rankine a Reaumur   &  &");
+                    System.out.println("ingrese un valor");
+                    num=teclado.nextDouble();
+
+                    resultado=(num-491.67)*4/9;
+                    System.out.println("El resultado es "+resultado);
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+
+                case 17:
+                    System.out.println("\n -----------------------------------------");
+                    int salir ;
+                    System.out.println("seguro que quieres salir   1)si  2)no ");
+                    salir=teclado.nextInt();
+
+                    if(salir==1){
+                        estado=false;
+                    }if(salir==2){
+                    estado=true;
+                }else {
+                    estado = false;
+                }
+                    System.out.println(" -----------------------------------------\n");
+                    break;
+
+                default:
+                    System.out.println("ERROR ingrese un numero valido  ");
+
+            }
+
         }while(estado);
 
     }
-
-    public static void menu(){
-
-        Scanner in = new Scanner(System.in);
-        System.out.println("#  #  #  #  REGISTRO EMPLEADOS  #  #  #  #  " +"\n"+
-                "1)Registrar Empleado de planta " +"\n"+
-                "2)Registrar Empleado por horas " +"\n"+
-                "3)Mostrar Informacion " +"\n"+
-                "4)Salir");
-        int opc= in.nextInt();
-        switch(opc){
-            case 1->{
-                in.nextLine();
-                String nombre;
-                int edad;
-
-
-                System.out.println("%  %  %  % REGISTRAR EMPLEADO DE PLANTA %  %  %  %  ");
-                System.out.print("ingrese el nombre :"+"\n");
-                nombre=in.nextLine();
-                System.out.println("Ingrese la edad :");
-                edad=in.nextInt();
-                empleados.add(new EmpleadoPlanta(nombre,edad));
-
-                System.out.println("$  $  $  $ Se ha registrado con exito $  $  $  $");
-
-            }
-            case 2->{
-                in.nextLine();
-                String nombre;
-                int edad;
-                int horas;
-
-
-                System.out.println("%  %  %  % REGISTRAR EMPLEADO POR HORAS %  %  %  %  "
-                );
-                System.out.print("ingrese el nombre :"+"\n");
-                nombre=in.nextLine();
-                nombre=in.nextLine();
-                System.out.println("Ingrese la edad :");
-                edad=in.nextInt();
-                System.out.println("Ingrese las horas trabajadas :");
-                horas=in.nextInt();
-                empleados.add(new EmpleadoHoras(nombre,edad,horas));
-
-                System.out.println("$  $  $  $ Se ha registrado con exito $  $  $  $");
-
-            }
-            case 3->{
-
-                System.out.println("°  °  °  °  ° MOSTRAR INFORMACION °  °  °  °  " +"\n"+
-                        "1)Empleados Planta " +"\n"+
-                        "2)Empleados por Horas" +"\n"+
-                        "3)Empleados en General");
-                int opcion= in.nextInt();
-                if(opcion==1){
-                    System.out.println("--------------------------------");
-                    for (Empleado empleado : empleados) {
-                        if(empleado instanceof EmpleadoPlanta){
-                            ((EmpleadoPlanta) empleado).mostrarInfo();
-                        }
-                    }
-                }if(opcion==2){
-                    System.out.println("--------------------------------");
-                    for (Empleado empleado : empleados) {
-                        if(empleado instanceof EmpleadoHoras){
-                            ((EmpleadoHoras) empleado).mostrarInfo();
-                        }
-                    }
-                }if(opcion==3){
-                    System.out.println("--------------------------------");
-                    for (Empleado empleado : empleados) {
-                        if (empleado instanceof EmpleadoHoras){
-                            ((EmpleadoHoras) empleado).mostrarInfo();
-                        }if (empleado instanceof EmpleadoPlanta){
-                            ((EmpleadoPlanta) empleado).mostrarInfo();
-                        }
-                    }
-                }
-
-            }
-            case 4->{
-                estado=false;
-            }
-            default->{
-                System.out.println("¡¡¡¡¡¡¡¡¡ingrese una opcion valida!!!!!");
-
-            }
-        }
-
-    }
-
 }
