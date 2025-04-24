@@ -51,28 +51,40 @@ public class Persona {
         this.documento = documento;
     }
 
-    public void lista(){
-        List<Perro> lstPerros = new ArrayList<>();
+
+
+    public List<Perro> getLstPerros() {
+        return lstPerros;
+    }
+
+    public void setLstPerros(List<Perro> lstPerros) {
+        this.lstPerros = lstPerros;
     }
 
     public void adoptarPerro (Perro perro){
-        if (lstPerros.size()>3){
-            System.out.println("    No puede adoptar más perros");
-        } else {
-            lstPerros.add(perro);
+        if(perro.isAdoptado()==false) {
+
+            if (lstPerros.size() > 3) {
+                System.out.println("    No puede adoptar más perros");
+            } else {
+                lstPerros.add(perro);
+                perro.setAdoptado(true);
+            }
+        }else{
+            System.out.println("El perro ya esta adoptado ");
         }
     }
 
-    public Perro perroMasGrande (){
-        Perro resultado=null;
-        for (Perro perro1 : lstPerros){
-            for (Perro perro2 : lstPerros){
-                if(perro1.getEdad()>=perro2.getEdad()){
-                    resultado=perro1;
-                }
-            }
-        }
-        return resultado;
+    public Perro  perroMasGrande (){
+       Perro perroGrande=null;
+       int edad =-1;
+       for(Perro perro : lstPerros){
+           if(perro.getEdad()>edad){
+               edad=perro.getEdad();
+               perroGrande=perro;
+           }
+       }
+        return perroGrande;
     }
 
     @Override
@@ -81,6 +93,16 @@ public class Persona {
                 "\n Apellido= " + apellido +
                 "\n Edad= " + edad +
                 "\n Documento= " + documento +
-                "\n Perros Adoptados=" + lstPerros;
+                "\n Perros Adoptados: "  ;
     }
+    public void  perrosAdoptados(){
+        if(lstPerros.size()!=0){
+            for (Perro perro2 : lstPerros){
+                System.out.print(perro2.getNombre()+" , ");
+
+            }
+        }else{
+            System.out.println("No tiene perros adoptados ");
+        }
+   }
 }
